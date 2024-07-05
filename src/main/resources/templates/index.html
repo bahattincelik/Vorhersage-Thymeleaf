@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>Vorhersage</title>
+</head>
+<body>
+<h1 style="color:red">Vorhersage</h1>
+
+<form th:action="@{/getVorhersage}" th:object="${vorhersage}" method="post">
+    <p>Id: <input type="text" th:field="*{vermuten}" /></p>
+
+    <p><input type="submit" value="Submit" /> </p>
+</form>
+<div style="text-align:left">
+<p>Ihre Ergebnis : <span style="color:blue; font-weight:bold" th:if="${result}" th:text="${result}"></span> </p>
+</div>
+
+<div style="text-align:left">
+    <p>Random Nummer : <span style="color:blue; font-weight:bold" th:if="${randVal}" th:text="${randVal}"></span> </p>
+</div>
+
+</body>
+</html>
